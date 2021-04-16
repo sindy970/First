@@ -10,6 +10,7 @@ public class StudentMain {
 		Student stu1 = new Student();
 
 		//setter를 이용하여 필드 값 지정하기
+		//private로 지정했기 때문에 접근 불가
 		//stu1.name = "이름1";
 		stu1.setName("학생1");
 		//stu1.address = "주소1";
