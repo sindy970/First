@@ -7,6 +7,7 @@ public class PeopleMain {
 	public static void main(String[] args) {
 		// People클래스를 사용하는 main클래스
 
+		//peo1 = People클래스 타입의 변수 라고 이해할 수 있다.
 		People peo1 = new People();
 		People peo2 = new People("이름2", "111111-1111111", "주소2", 20);
 		People peo3 = new People();
