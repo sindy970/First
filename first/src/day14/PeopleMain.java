@@ -45,6 +45,18 @@ public class PeopleMain {
 			System.out.println(peopeleList.get(i));
 		}
 
+		//PeopleService클래스의 객체 선언
+		PeopleService ps = new PeopleService();
+		
+		System.out.println("listPrint 호출 전");
+		ps.listPrint(peopeleList);
+		System.out.println("listPrint 호출 끝");
+
+		for (int i = 0; i < peopeleList.size(); i++) {
+			System.out.println(peopeleList.get(i));
+		}
+		
+		ps.peoplePrint(peo2);
 	}
 
 }
