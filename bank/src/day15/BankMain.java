@@ -53,6 +53,7 @@ public class BankMain {
 				bank.setBalance(deposit);
 
 				bank.setClientNumber(count);
+				//count = bankList.size()+1; 의 형식으로도 가능하다.
 				count++;
 
 				bankList.add(bank);
@@ -93,7 +94,7 @@ public class BankMain {
 						int balance = bankList.get(i).getBalance() + deposit;
 						bankList.get(i).setBalance(balance);
 						System.out.println("현재 잔액 : " + bankList.get(i).getBalance());
-					}
+					} 
 				}
 				break;
 
@@ -117,7 +118,7 @@ public class BankMain {
 							bankList.get(i).setBalance(balance);
 							System.out.println("잔액 : " + bankList.get(i).getBalance());
 						}
-					}
+					} 
 
 				}
 				break;
