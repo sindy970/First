@@ -16,10 +16,10 @@ public class BankMain {
 		// 객체 선언
 		// Bank bank = new Bank();
 		// => 컴퓨터 메모리 상에 생성되는 위치과 데이터 참조의 구조 때문에 원하는 값이 안나오고
-		//		값이 덮어쓰기가 된다. , 컴퓨터 상의 특징 때문에
-		//		반복적으로 값을 받을 경우에는 사용할 객체는 반복문 안에 선언해주는 것이 좋다.
+		// 값이 덮어쓰기가 된다. , 컴퓨터 상의 특징 때문에
+		// 반복적으로 값을 받을 경우에는 사용할 객체는 반복문 안에 선언해주는 것이 좋다.
 		// Bank bank = null; => 밖에 선언을 원하는 경우 선언 방식
-		
+
 		// 고객 전체를 저장할 list 선언
 		List<Bank> bankList = new ArrayList<Bank>();
 
@@ -89,7 +89,9 @@ public class BankMain {
 
 				for (int i = 0; i < bankList.size(); i++) {
 					if (account.equals(bankList.get(i).getAccountNumber())) {
-						bankList.get(i).setBalance(deposit);
+						// bankList.get(i).setBalance(deposit);
+						int balance = bankList.get(i).getBalance() + deposit;
+						bankList.get(i).setBalance(balance);
 						System.out.println("현재 잔액 : " + bankList.get(i).getBalance());
 					}
 				}
@@ -110,7 +112,9 @@ public class BankMain {
 							System.out.println("잔액이 부족합니다.");
 							System.out.println("잔액 : " + bankList.get(i).getBalance());
 						} else {
-							bankList.get(i).setBalance(-withdraw);
+							// bankList.get(i).setBalance(-withdraw);
+							int balance = bankList.get(i).getBalance() - withdraw;
+							bankList.get(i).setBalance(balance);
 							System.out.println("잔액 : " + bankList.get(i).getBalance());
 						}
 					}

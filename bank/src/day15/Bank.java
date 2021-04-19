@@ -37,7 +37,7 @@ public class Bank {
 	}
 
 	public void setBalance(int balance) {
-		this.balance += balance;
+		this.balance = balance;
 	}
 
 	public String getName() {
