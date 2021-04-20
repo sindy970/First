@@ -23,6 +23,10 @@ public class BankMain {
 		// 고객 전체를 저장할 list 선언
 		List<Bank> bankList = new ArrayList<Bank>();
 
+		// Service클래스 객체 선언
+		// 처리를 위한 용도이기 때문에 하나만 선언해서 사용하는 것이 좋다.
+		BankService bs = new BankService();
+
 		while (run) {
 			System.out.println("-----------------------------------------------------------------------");
 			System.out.println("1.고객등록(get,set) | 2.고객등록(생성자) | 3.입금 | 4.출금 | 5.고객리스트 | 6.종료");
@@ -53,7 +57,7 @@ public class BankMain {
 				bank.setBalance(deposit);
 
 				bank.setClientNumber(count);
-				//count = bankList.size()+1; 의 형식으로도 가능하다.
+				// count = bankList.size()+1; 의 형식으로도 가능하다.
 				count++;
 
 				bankList.add(bank);
@@ -82,45 +86,53 @@ public class BankMain {
 			case 3:
 
 				// 입금 : 계좌번호 조회 후 해당 계좌에 넣기
-				System.out.print("계좌 : ");
-				account = sc.next();
+				// System.out.print("계좌 : ");
+				// account = sc.next();
 
-				System.out.print("입금액 : ");
-				deposit = sc.nextInt();
+				// System.out.print("입금액 : ");
+				// deposit = sc.nextInt();
 
-				for (int i = 0; i < bankList.size(); i++) {
-					if (account.equals(bankList.get(i).getAccountNumber())) {
-						// bankList.get(i).setBalance(deposit);
-						int balance = bankList.get(i).getBalance() + deposit;
-						bankList.get(i).setBalance(balance);
-						System.out.println("현재 잔액 : " + bankList.get(i).getBalance());
-					} 
-				}
+				// for (int i = 0; i < bankList.size(); i++) {
+				// if (account.equals(bankList.get(i).getAccountNumber())) {
+				// bankList.get(i).setBalance(deposit);
+				// int balance = bankList.get(i).getBalance() + deposit;
+				// bankList.get(i).setBalance(balance);
+				// System.out.println("현재 잔액 : " + bankList.get(i).getBalance());
+				// }
+				// }
+
+				// BankService클래스에 있는 입금용 메소드 호출
+				//return값이 있으므로 받아주는 변수가 필요하다.
+				bankList = bs.listDeposit(bankList);
 				break;
 
 			case 4:
 
 				// 출금
-				System.out.print("계좌 : ");
-				account = sc.next();
+				// System.out.print("계좌 : ");
+				// account = sc.next();
 
-				System.out.print("출금액 : ");
-				withdraw = sc.nextInt();
+				// System.out.print("출금액 : ");
+				// withdraw = sc.nextInt();
 
-				for (int i = 0; i < bankList.size(); i++) {
-					if (account.equals(bankList.get(i).getAccountNumber())) {
-						if ((bankList.get(i).getBalance() - withdraw) < 0) {
-							System.out.println("잔액이 부족합니다.");
-							System.out.println("잔액 : " + bankList.get(i).getBalance());
-						} else {
-							// bankList.get(i).setBalance(-withdraw);
-							int balance = bankList.get(i).getBalance() - withdraw;
-							bankList.get(i).setBalance(balance);
-							System.out.println("잔액 : " + bankList.get(i).getBalance());
-						}
-					} 
+				// for (int i = 0; i < bankList.size(); i++) {
+				// if (account.equals(bankList.get(i).getAccountNumber())) {
+				// if ((bankList.get(i).getBalance() - withdraw) < 0) {
+				// System.out.println("잔액이 부족합니다.");
+				// System.out.println("잔액 : " + bankList.get(i).getBalance());
+				// } else {
+				// bankList.get(i).setBalance(-withdraw);
+				// int balance = bankList.get(i).getBalance() - withdraw;
+				// bankList.get(i).setBalance(balance);
+				// System.out.println("잔액 : " + bankList.get(i).getBalance());
+				// }
+				// }
 
-				}
+				// }
+
+				// BankService클래스에 있는 출금용 메소드 호출
+				//return값이 있으므로 받아주는 변수가 있어야 한다.
+				bankList = bs.listWithdraw(bankList);
 				break;
 
 			case 5:
