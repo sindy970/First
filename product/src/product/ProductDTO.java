@@ -6,7 +6,7 @@ public class ProductDTO {
 	//필드선언
 	private String pName;
 	private int pNumber, pPrice, pStock;
-	
+	 
 	//기본 생성자
 	ProductDTO(){
 		
