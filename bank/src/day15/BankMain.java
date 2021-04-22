@@ -21,7 +21,7 @@ public class BankMain {
 		// Bank bank = null; => 밖에 선언을 원하는 경우 선언 방식
 
 		// 고객 전체를 저장할 list 선언
-		List<Bank> bankList = new ArrayList<Bank>();
+		List<BankDTO> bankList = new ArrayList<BankDTO>();
 
 		// Service클래스 객체 선언
 		// 처리를 위한 용도이기 때문에 하나만 선언해서 사용하는 것이 좋다.
@@ -39,7 +39,7 @@ public class BankMain {
 
 			case 1:
 				// switch - case문 내에서는 선언한 변수들이 공유가 가능하므로 한번만 선언하고 계속 사용 가능하다.
-				Bank bank = new Bank();
+				BankDTO bank = new BankDTO();
 
 				// 고객등록(get/set)이용
 				System.out.print("이름 : ");
@@ -75,7 +75,7 @@ public class BankMain {
 				System.out.print("입금액 : ");
 				deposit = sc.nextInt();
 
-				bank = new Bank(count, deposit, name, account);
+				bank = new BankDTO(count, deposit, name, account);
 
 				bank.setClientNumber(count);
 				count++;

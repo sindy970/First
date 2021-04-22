@@ -1,6 +1,6 @@
 package day15;
 
-public class Bank {
+public class BankDTO {
 	// 은행 고객에 대한 정보를 정의한 클래스
 	// 정보를 다루기 위해 선언하는 클래스 ==> DTO(Data Transfer Object)
 	// VO(Value Object), Bean... 등으로 표현한다.
@@ -10,12 +10,12 @@ public class Bank {
 	private String name, accountNumber;
 
 	// 기본생성자 선언
-	Bank() {
+	BankDTO() {
 
 	}
 
 	// 모든 필드를 매개변수로 하는 생성자 선언
-	public Bank(int clientNumber, int balance, String name, String accountNumber) {
+	public BankDTO(int clientNumber, int balance, String name, String accountNumber) {
 		super();
 		this.clientNumber = clientNumber;
 		this.balance = balance;

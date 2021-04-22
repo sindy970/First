@@ -15,7 +15,7 @@ public class BankService {
 	 * 가져야 하기 때문에 리턴을 줘야 한다.)
 	 * 
 	 */
-	List<Bank> listDeposit(List<Bank> bank1) {
+	List<BankDTO> listDeposit(List<BankDTO> bank1) {
 		// 입금 : 계좌번호 조회 후 계좌에 넣기
 		System.out.print("계좌 : ");
 		String account = sc.next();
@@ -36,7 +36,7 @@ public class BankService {
 		return bank1;
 	}// listDeposit
 
-	List<Bank> listWithdraw(List<Bank> bank2) {
+	List<BankDTO> listWithdraw(List<BankDTO> bank2) {
 		// 출금 :계좌와 출금액을 입력받은 후 해당 계좌 찾기
 		System.out.print("계좌 : ");
 		String account = sc.next();
